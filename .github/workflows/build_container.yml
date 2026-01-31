@@ -8,7 +8,7 @@ on:
 jobs:
   build-secure-push:
     name: Build, Scan & Push
-    runs-on: [self-hosted, pi5]
+    runs-on: [ubuntu-slim]
     permissions:
       contents: write
       packages: write
