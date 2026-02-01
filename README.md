@@ -87,34 +87,34 @@ Example of `docker-compose.yml`. Please remember to create the `.env.samba` file
 ```yaml
 services:
   samba:
-		build:
-			context: .
-			dockerfile: smb.dockerfile
-		container_name: samba_server
-		restart: always
-		env_file:
-			- /YOUR_LOCAL_PATH/.env.samba
-		volumes:
-			- /docker-services/samba/smb.conf:/etc/samba/smb.conf:ro
-			- /docker-services/samba/samba-data/lib:/var/lib/samba
-			- /docker-services/samba/samba-data/log:/var/log/samba
-			- /YOUR_LOCAL_PATH/data_net/general:/general
-			- /YOUR_LOCAL_PATH/data_net/music:/music
-			- /YOUR_LOCAL_PATH/data_net/pcgames:/pcgames
-			- /YOUR_LOCAL_PATH/data_net/tvshows:/tvshows
-			- /YOUR_LOCAL_PATH/data_net/movies:/movies
-			- /YOUR_LOCAL_PATH/data_net/console:/console
-			- /YOUR_LOCAL_PATH/data_net/pcsoftware:/pcsoftware
-			- /YOUR_LOCAL_PATH/data_net/books:/books
-			- /YOUR_LOCAL_PATH/data_net/savegame:/savegame
-			- /YOUR_LOCAL_PATH/qbittorrent/downloads:/downloads
-			- /YOUR_LOCAL_PATH/data_net/photos:/photos
-		ports:
-			- "445:445"
-		deploy:
-			resources:
-				limits:
-					memory: 512M
+    build:
+      context: .
+      dockerfile: smb.dockerfile
+    container_name: samba_server
+    restart: always
+    env_file:
+      - /YOUR_LOCAL_PATH/.env.samba
+    volumes:
+      - /docker-services/samba/smb.conf:/etc/samba/smb.conf:ro
+      - /docker-services/samba/samba-data/lib:/var/lib/samba
+      - /docker-services/samba/samba-data/log:/var/log/samba
+      - /YOUR_LOCAL_PATH/data_net/general:/general
+      - /YOUR_LOCAL_PATH/data_net/music:/music
+      - /YOUR_LOCAL_PATH/data_net/pcgames:/pcgames
+      - /YOUR_LOCAL_PATH/data_net/tvshows:/tvshows
+      - /YOUR_LOCAL_PATH/data_net/movies:/movies
+      - /YOUR_LOCAL_PATH/data_net/console:/console
+      - /YOUR_LOCAL_PATH/data_net/pcsoftware:/pcsoftware
+      - /YOUR_LOCAL_PATH/data_net/books:/books
+      - /YOUR_LOCAL_PATH/data_net/savegame:/savegame
+      - /YOUR_LOCAL_PATH/qbittorrent/downloads:/downloads
+      - /YOUR_LOCAL_PATH/data_net/photos:/photos
+    ports:
+      - "445:445"
+    deploy:
+      resources:
+        limits:
+          memory: 512M
 ```
 
 ## Environment Variables
