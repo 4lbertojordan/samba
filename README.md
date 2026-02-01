@@ -1,11 +1,6 @@
 # Local Samba Server
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![Unlicense License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[](https://github.com/4lbertojordan/samba/actions/workflows/WORKFLOW-FILE/badge.svg)
 
 Basic Samba container ready to share files between Windows, macOS, and Linux.
 This container is ideal for people who want to deploy a simple SAMBA server.
