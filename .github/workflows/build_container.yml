@@ -3,6 +3,9 @@ name: Build Samba Container
 on:
   push:
     branches: ["main"]
+    paths-ignore:
+      - "**.md"
+      - ".gitignore"
   workflow_dispatch:
 
 jobs:

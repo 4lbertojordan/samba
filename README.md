@@ -1,6 +1,13 @@
 # Local Samba Server
 
-[](https://github.com/4lbertojordan/samba/actions/workflows/WORKFLOW-FILE/badge.svg)
+[![Build Samba Container](https://github.com/4lbertojordan/samba/actions/workflows/build_container.yml/badge.svg?branch=main)](https://github.com/4lbertojordan/samba/actions/workflows/build_container.yml)
+![GitHub last commit](https://img.shields.io/github/last-commit/4lbertojordan/samba?style=flat-square)
+![GitHub stars](https://img.shields.io/github/stars/4lbertojordan/samba?style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues/4lbertojordan/samba?style=flat-square)
+![GitHub License](https://img.shields.io/github/license/4lbertojordan/samba?style=flat-square)
+
+![Docker Pulls](https://img.shields.io/docker/pulls/jord4ncodes/samba?style=flat-square&logo=docker)
+![Docker Image Size](https://img.shields.io/docker/image-size/jord4ncodes/samba/latest?style=flat-square&logo=docker)
 
 Basic Samba container ready to share files between Windows, macOS, and Linux.
 This container is ideal for people who want to deploy a simple SAMBA server.
