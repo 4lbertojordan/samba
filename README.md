@@ -1,5 +1,7 @@
 # Local Samba Server
 
+![GitHub followers](https://img.shields.io/github/followers/4lbertojordan?style=social)
+
 [![Build Samba Container](https://github.com/4lbertojordan/samba/actions/workflows/build_container.yml/badge.svg?branch=main)](https://github.com/4lbertojordan/samba/actions/workflows/build_container.yml)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/4lbertojordan/samba?style=flat-square&logo=github&color=blue)
 ![GitHub last commit](https://img.shields.io/github/last-commit/4lbertojordan/samba?style=flat-square)
@@ -10,6 +12,8 @@
 ![Docker Image Version (latest semver)](https://img.shields.io/docker/v/jord4ncodes/samba?sort=semver&style=flat-square&logo=docker)
 ![Docker Pulls](https://img.shields.io/docker/pulls/jord4ncodes/samba?style=flat-square&logo=docker)
 ![Docker Image Size](https://img.shields.io/docker/image-size/jord4ncodes/samba/latest?style=flat-square&logo=docker)
+![Docker Image ARM](https://img.shields.io/badge/docker%20image-arm64-blue?style=flat-square&logo=docker)
+![Docker Image x86-64](https://img.shields.io/badge/docker%20image-x86--64-blue?style=flat-square&logo=docker)
 
 Basic Samba container ready to share files between Windows, macOS, and Linux.
 This container is ideal for people who want to deploy a simple SAMBA server.
@@ -180,6 +184,14 @@ sudo mount -t cifs //SERVER_IP/general /mnt/samba -o username=YOUR_USER,password
 - This container exposes only port 445/tcp.
 - It is recommended to adjust `hosts allow` in `smb.conf` to limit allowed networks.
 - Use strong passwords.
+
+## Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## Security Reporting
+
+Please report security vulnerabilities responsibly by following the instructions in [SECURITY.md](SECURITY.md).
 
 ## License
 
