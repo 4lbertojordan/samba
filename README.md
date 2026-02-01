@@ -1,11 +1,13 @@
 # Local Samba Server
 
 [![Build Samba Container](https://github.com/4lbertojordan/samba/actions/workflows/build_container.yml/badge.svg?branch=main)](https://github.com/4lbertojordan/samba/actions/workflows/build_container.yml)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/4lbertojordan/samba?style=flat-square&logo=github&color=blue)
 ![GitHub last commit](https://img.shields.io/github/last-commit/4lbertojordan/samba?style=flat-square)
 ![GitHub stars](https://img.shields.io/github/stars/4lbertojordan/samba?style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues/4lbertojordan/samba?style=flat-square)
 ![GitHub License](https://img.shields.io/github/license/4lbertojordan/samba?style=flat-square)
 
+![Docker Image Version (latest semver)](https://img.shields.io/docker/v/jord4ncodes/samba?sort=semver&style=flat-square&logo=docker)
 ![Docker Pulls](https://img.shields.io/docker/pulls/jord4ncodes/samba?style=flat-square&logo=docker)
 ![Docker Image Size](https://img.shields.io/docker/image-size/jord4ncodes/samba/latest?style=flat-square&logo=docker)
 
