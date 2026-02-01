@@ -86,7 +86,7 @@ Example of `docker-compose.yml`. Please remember to create the `.env.samba` file
 
 ```yaml
 services:
-	samba:
+  samba:
 		build:
 			context: .
 			dockerfile: smb.dockerfile
