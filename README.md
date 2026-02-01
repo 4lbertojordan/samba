@@ -134,7 +134,7 @@ These variables can be defined in the `.env` file or directly in the `docker-com
 | `SMB_GID`      | GID of the group.                                                 | `1001`                 |
 | `TZ`           | Timezone of the container.                                        | `Europe/Madrid`        |
 
-## Shared Folders Configuration
+## Shared Folders Configuration example:
 
 Shared resources are defined in [smb.conf](smb.conf). Each section has its path inside the container:
 
@@ -152,6 +152,92 @@ Shared resources are defined in [smb.conf](smb.conf). Each section has its path 
 If you want to change the server name or more global parameters, edit the `[global]` section in [smb.conf](smb.conf).
 
 If you want to add more shared folders, create the folder on the host, add the volume in Docker, and add the corresponding section in `smb.conf`.
+
+## smb.conf Overview:
+
+```conf
+[global]
+   # ============================================================
+   # 1. IDENTITY
+   # ============================================================
+   server string = SAMBA
+   workgroup = HOME
+
+   # ============================================================
+   # 2. NETWORK SECURITY AND USER MANAGEMENT
+   # ============================================================
+   hosts allow = 127.0.0.1 192.168.153.0/24 10.8.0.0/24
+   hosts deny = ALL
+
+   force user = jordancodes
+   force group = home
+
+   invalid users = root bin daemon adm sync shutdown halt mail news uucp operator
+   map to guest = never
+   restrict anonymous = 2
+
+   # ============================================================
+   # 3. PROTOCOL AND ENCRYPTION
+   # ============================================================
+   min protocol = SMB3_11
+   ntlm auth = no
+   disable netbios = yes
+   smb encrypt = required
+
+   # ============================================================
+   # 4. PERFORMANCE
+   # ============================================================
+   use sendfile = yes
+   aio read size = 1
+   aio write size = 1
+   socket options = TCP_NODELAY
+   strict locking = no
+
+   # ============================================================
+   # 5. LOGS
+   # ============================================================
+   log file = /var/log/samba/log.%m
+   max log size = 1000
+   logging = file
+
+   # ============================================================
+   # 6. HYBRID CONFIGURATION (MAC + WINDOWS + LINUX)
+   # ============================================================
+   vfs objects = catia fruit streams_xattr recycle
+
+   # --- Recycle Configuration ---
+   recycle:repository = .recycle
+   recycle:keeptree = yes
+   recycle:versions = yes
+   recycle:touch = yes
+
+   # --- Mac Configuration (Fruit) ---
+   fruit:metadata = stream
+   fruit:model = MacSamba
+   fruit:posix_rename = yes
+   fruit:veto_appledouble = no
+   fruit:wipe_intentionally_left_blank_rfork = yes
+   fruit:delete_empty_adfiles = yes
+   fruit:nfs_aces = no
+
+   # --- Character Compatibility Configuration (Catia) ---
+   catia:mappings = 0x22:0xa8,0x2a:0xa4,0x2f:0xf8,0x3a:0xf7,0x3c:0xab,0x3e:0xbb,0x3f:0xbf,0x5c:0xff,0x7c:0xa6
+
+
+# ============================================================
+# SHARED FOLDERS
+# ============================================================
+
+[general]
+   path = /general
+   browsable = yes
+   read only = no
+   guest ok = no
+   valid users = jordancodes
+   write list = jordancodes
+   veto files = /*.com/*.dll/*.bat/*.vbs/._*/.apdisk/.AppleDouble/.DS_Store/.TemporaryItems/.Trashes/desktop.ini/ehthumbs.db/Network Trash Folder/Temporary Items/Thumbs.db/
+   delete veto files = yes
+```
 
 ## Connecting from Clients
 
